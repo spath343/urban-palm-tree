@@ -1,0 +1,29 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# MATLAB files
+*.asv
+*.m~
+*.slxc
+slprj/
+*.mex*
+*.mat
+*.mldatx
+
+# CAD lock and backup files
+*.~*
+~$*
+*.bak
+*.sldprt.bak
+*.sldasm.bak
+
+# FEA / CFD heavy mesh & solution databases (>100MB risk)
+*.db
+*.rth
+*.rst
+*.cas.gz
+*.dat.gz
+*.lock
+*_files/
