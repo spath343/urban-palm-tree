@@ -1,1 +1,0 @@
-Dedicated project documentation & results
