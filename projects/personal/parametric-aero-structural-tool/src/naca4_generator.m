@@ -87,6 +87,6 @@ plot(alpha_deg,C_l);
 % Set plot properties for the lift polar
 xlabel('Angle of Attack (degrees)');
 ylabel('Coefficient of Lift (C_l)');
-title("Theoretical Lift Polar for NACA" + naca_name);
+title("Theoretical Lift Polar for NACA " + naca_name);
 grid on;
 axis([-5 15 -0.5 2]);
