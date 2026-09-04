@@ -7,10 +7,9 @@ figure(2), D=1*real(RR_evaluate(-1/L,1i*omega)), RR_rlocus(G*D)
 G=RR_pade(d,16,12)*RR_tf(1,[1 a]);D=16.25;
 figure(3); RR_rlocus(G*D)
 %%
-clear;clc;close all;
 d=0.1; a=1; % re-type in this section because figures were messing up
 D = 16.46;G=RR_pade(d,2,2)*RR_tf(1,[1 a]); 
 D_half = D/2;D_twice = D*2;
 L_half = G*D_half;L_twice = G*D_twice;
-figure(1);g.R=50;RR_nyquist(L_half,g);
-figure(2);g.R=50;RR_nyquist(L_twice,g);
+figure(2);g.R=50;RR_nyquist(L_half,g);
+figure(3);g.R=50;RR_nyquist(L_twice,g);
