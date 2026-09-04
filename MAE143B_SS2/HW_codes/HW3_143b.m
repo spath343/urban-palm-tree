@@ -12,5 +12,5 @@ d=0.1; a=1; % re-type in this section because figures were messing up
 D = 16.46;G=RR_pade(d,2,2)*RR_tf(1,[1 a]); 
 D_half = D/2;D_twice = D*2;
 L_half = G*D_half;L_twice = G*D_twice;
-figure(1);RR_nyquist(L_half);
-figure(2);RR_nyquist(L_twice);
+figure(1);g.R=50;RR_nyquist(L_half,g);
+figure(2);g.R=50;RR_nyquist(L_twice,g);
