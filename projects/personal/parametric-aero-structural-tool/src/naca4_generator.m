@@ -68,7 +68,7 @@ Z_col = zeros(size(X_col));
 airfoil_data = [X_col, Y_col, Z_col];
 
 script_dir = fileparts(mfilename('fullpath'));
-output_file = fullfile(script_dir, '..', 'data', 'airfoil_coordinates.csv');
+output_file = fullfile(script_dir, '..', 'data', 'airfoil_coordinates.txt');
 writematrix(airfoil_data, output_file,'Delimiter','tab');
 
 %% Thin Airfoil Theory Analytical Lift Polar
