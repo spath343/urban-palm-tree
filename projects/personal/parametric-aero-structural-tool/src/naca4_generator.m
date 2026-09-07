@@ -61,22 +61,15 @@ grid on;
 hold off;
 
 %% creating airfoil coordinates csv
+X_col = [flip(x_u), x_l(2:end)]';
+Y_col = [flip(y_u), y_l(2:end)]';
+Z_col = zeros(size(X_col));
 
-X_raw = [flip(x_u), x_l(2:end)]';
-Y_raw = [flip(y_u), y_l(2:end)]';
-Z_raw = zeros(size(X_raw));
-raw_coords = [X_raw, Y_raw, Z_raw];
+airfoil_data = [X_col, Y_col, Z_col];
 
-% Calculate distance between consecutive points
-pt_dist = sqrt(sum(diff(raw_coords, 1, 1).^2, 2));
-
-% Keep points that are separated by more than 1e-5 m (plus the very first point)
-valid_idx = [true; pt_dist > 1e-5];
-airfoil_sw = raw_coords(valid_idx, :);
-
-% Export clean tab-delimited text for SolidWorks (NO headers)
-output_sw = fullfile('C:\Users\shank\OneDrive\Documents\GitHub\urban-palm-tree\projects\personal\parametric-aero-structural-tool\data', '..', 'data', 'airfoil_solidworks.txt');
-writematrix(airfoil_sw, output_sw, 'Delimiter', 'tab');
+script_dir = fileparts(mfilename('fullpath'));
+output_file = fullfile(script_dir, '..', 'data', 'airfoil_coordinates.txt');
+writematrix(airfoil_data, output_file,'Delimiter','tab');
 
 %% Thin Airfoil Theory Analytical Lift Polar
 
